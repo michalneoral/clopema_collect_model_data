@@ -1,0 +1,15 @@
+<package>
+  <description brief="clopema_collect_model_data">
+
+     clopema_collect_model_data
+
+  </description>
+  <author>Michal Neoral</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
