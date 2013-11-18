@@ -1,0 +1,9 @@
+/joint_states
+/tf
+/xtion1/depth/camera_info
+/xtion1/depth_registered/camera_info
+/xtion1/projector/camera_info
+/xtion1/rgb/camera_info
+/xtion1/depth/image_raw
+/xtion1/rgb/image_raw
+/xtion1/depth/disparity
