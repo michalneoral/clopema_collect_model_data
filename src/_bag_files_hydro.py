@@ -10,7 +10,8 @@ path_to_files = local_options.savefolder
 #path_to_files = '/home/neoral/'
 path_to_topic = ''.join([local_options.pcglocate,'matlab/topics'])
 
-def start_bag_file_all(name,speed,number,subname):
+#def start_bag_file_all(name,speed,number,subname):
+def start_bag_file_all(name,speed,subname):
     """function to save bag file
        save only topics in ./../matlab/topics.txt"""   
     #read a file with names of topics
@@ -24,7 +25,8 @@ def start_bag_file_all(name,speed,number,subname):
     except IOError:
         pass
 
-    name_of_file=''.join([path_to_files, name, '_', speed, '_', str(number), '_', subname])
+    #name_of_file=''.join([path_to_files, name, '_', speed, '_', str(number), '_', subname])
+    name_of_file=''.join([path_to_files, name, '_', speed, '_', subname])
     m=range(0,len(topicfile)+5)
     m[0]='rosbag'
     m[1]='record'
@@ -37,7 +39,8 @@ def start_bag_file_all(name,speed,number,subname):
     p = subprocess.Popen(m)
     return p.pid  
     
-def start_bag_file_topic(name,speed,number,subname):
+#def start_bag_file_topic(name,speed,number,subname):
+def start_bag_file_topic(name,speed,subname):
     """function to save bag file
        save only topics in ./../matlab/topics.txt"""   
        
@@ -52,7 +55,8 @@ def start_bag_file_topic(name,speed,number,subname):
     except IOError:
         pass
 
-    name_of_file=''.join([path_to_files, name, '_', speed, '_', str(number), '_', subname])
+    #name_of_file=''.join([path_to_files, name, '_', speed, '_', str(number), '_', subname])
+    name_of_file=''.join([path_to_files, name, '_', speed, '_', subname])
     m=range(0,len(topicfile)+5)
     m[0]='rosbag'
     m[1]='record'

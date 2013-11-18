@@ -11,40 +11,42 @@ time_to_measure = 0
 class bag_file_record:
     def __init__(self):
         self.subname_of_file = ''
-        self.number_of_file = ''
+        #self.number_of_file = ''
         self.time_more = 8.0
         self.robot_speed = '0.1'
                 
-    def zeros(self):
-        _h_num=int(self.number_of_file)
-        count=0
-        while _h_num >= 10:
-           	_h_num = _h_num/10
-           	count+=1
-        s = str(int(self.number_of_file))
-        for i in range(3-count):
-            s=''.join(['0',s])
-        self.number_of_file=s       
+    #def zeros(self):
+        #_h_num=int(self.number_of_file)
+        #count=0
+        #while _h_num >= 10:
+           	#_h_num = _h_num/10
+           	#count+=1
+        #s = str(int(self.number_of_file))
+        #for i in range(3-count):
+            #s=''.join(['0',s])
+        #self.number_of_file=s       
 
-    def increase_number(self):
-        num=int(self.number_of_file)
-        num+=1
-        self.number_of_file=str(num)
-        self.zeros()
+    #def increase_number(self):
+        #num=int(self.number_of_file)
+        #num+=1
+        #self.number_of_file=str(num)
+        #self.zeros()
     
     def rename_bag(self):
         self.subname_of_file = str(raw_input('\nPut a name of file:\n'))
         while self.subname_of_file == '':
             self.subname_of_file = str(raw_input('\nPut a name of file:\n'))
-        self.number_of_file = str(raw_input('\nPut a number of file:\n'))
-        while self.number_of_file == '':
-            self.number_of_file = str(raw_input('\nPut a number of file:\n'))
-        self.zeros()
+        #self.number_of_file = str(raw_input('\nPut a number of file:\n'))
+        #while self.number_of_file == '':
+            #self.number_of_file = str(raw_input('\nPut a number of file:\n'))
+        #self.zeros()
 
     def get_next_name(self):
-        if self.subname_of_file == '' or self.number_of_file == '':
+        #if self.subname_of_file == '' or self.number_of_file == '':
+        if self.subname_of_file == '':
 	        self.rename_bag()
-        next_name=''.join([self.subname_of_file, '_', self.robot_speed, '_', self.number_of_file,'_RB.', 'bag'])
+        #next_name=''.join([self.subname_of_file, '_', self.robot_speed, '_', self.number_of_file,'_RB.', 'bag'])
+        next_name=''.join([self.subname_of_file, '_', self.robot_speed, '_RB.', 'bag'])
         return next_name
     
     def change_speed(self):
@@ -82,13 +84,13 @@ def action_record_submenu(f):
             GoToActionJoints_r1(0)
             GoToActionJoints_r2(0,y)
             time.sleep(f.time_more)
-            pid=start_bag_file_topic(f.subname_of_file,f.robot_speed,f.number_of_file,str(i))
+            #pid=start_bag_file_topic(f.subname_of_file,f.robot_speed,f.number_of_file,str(i))
+            pid=start_bag_file_topic(f.subname_of_file,f.robot_speed,str(i))
             time.sleep(2)
             ActionMove(i,y)
             stop_bag_file(pid,f.time_more)
-            time.sleep(2)
-    
-    f.increase_number()
+            time.sleep(2)    
+    #f.increase_number()
     
 def action_record(f):
     i=raw_input("\n\n PRESS ENTER to close grip in %d seconds(...n...for exit)\n\n" % time_to_close)
