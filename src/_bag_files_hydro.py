@@ -8,7 +8,11 @@ import local_options
 
 path_to_files = local_options.savefolder
 #path_to_files = '/home/neoral/'
-path_to_topic = ''.join([local_options.pcglocate,'matlab/topics'])
+path_to_topic = ''.join([local_options.pcglocate,'matlab/topics/topics'])
+
+""" number of best topic file """
+number_of_topic_file = '1'
+
 
 #def start_bag_file_all(name,speed,number,subname):
 def start_bag_file_all(name,speed,subname):
@@ -25,9 +29,9 @@ def start_bag_file_all(name,speed,subname):
     except IOError:
         pass
 
+    m=range(0,len(topicfile)+5)
     #name_of_file=''.join([path_to_files, name, '_', speed, '_', str(number), '_', subname])
     name_of_file=''.join([path_to_files, name, '_', speed, '_', subname])
-    m=range(0,len(topicfile)+5)
     m[0]='rosbag'
     m[1]='record'
     m[2]='--duration=8'
@@ -45,7 +49,7 @@ def start_bag_file_topic(name,speed,subname):
        save only topics in ./../matlab/topics.txt"""   
        
     #read a file with names of topics
-    filename = "".join([path_to_topic,subname,'.txt'])
+    filename = "".join([path_to_topic,number_of_topic_file,'.txt'])
     try:
         f = open(filename, "r")
         try:

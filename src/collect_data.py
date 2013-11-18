@@ -79,31 +79,39 @@ def action_record_submenu(f):
     #GoToActionJoints_r1(0)
     #GoToActionJoints_r2(0,0)
     
-    for i in range(0,3):
+    """Can measure more different position, but now is only one"""
+    for i in range(1,2):
         for y in range (0,2):
-            GoToActionJoints_r1(0)
-            GoToActionJoints_r2(0,y)
+            GoToActionJoints_r1(i)
+            GoToActionJoints_r2(i,y)
             time.sleep(f.time_more)
             #pid=start_bag_file_topic(f.subname_of_file,f.robot_speed,f.number_of_file,str(i))
-            pid=start_bag_file_topic(f.subname_of_file,f.robot_speed,str(i))
+            pid=start_bag_file_topic(f.subname_of_file,f.robot_speed,get_subname(i,y))
             time.sleep(2)
             ActionMove(i,y)
             stop_bag_file(pid,f.time_more)
-            time.sleep(2)    
+            time.sleep(2)
     #f.increase_number()
     
-def action_record(f):
-    i=raw_input("\n\n PRESS ENTER to close grip in %d seconds(...n...for exit)\n\n" % time_to_close)
-    if i != 'n' and i != 'N':
-        time.sleep(time_to_close)
-        CloseGrip()
-        i=raw_input("\n\n PRESS ENTER to action in %d seconds(...n...for open grip and exit)\n\n" % time_to_measure)
-        if i != 'n' and i != 'N':
+#def action_record(f):
+    #i=raw_input("\n\n PRESS ENTER to close grip in %d seconds(...n...for exit)\n\n" % time_to_close)
+    #if i != 'n' and i != 'N':
+        #time.sleep(time_to_close)
+        #CloseGrip()
+        #i=raw_input("\n\n PRESS ENTER to action in %d seconds(...n...for open grip and exit)\n\n" % time_to_measure)
+        #if i != 'n' and i != 'N':
 			
-            time.sleep(time_to_measure)
+            #time.sleep(time_to_measure)
+            #action_record_submenu(f)
+        #else:
+		    #OpenGrip()
+            
+def action_record(f):
+        i=raw_input("\n\n PRESS A BUTTON to action in (...n...for open grip and exit)\n\n")
+        if i != 'n' and i != 'N':
             action_record_submenu(f)
-        else:
-		    OpenGrip()
+        #else:
+		    #OpenGrip()
 		    
 def _record_change_menu(i,f):
     #may do no.3 - change time
@@ -125,7 +133,7 @@ def _record_change_menu(i,f):
     elif i=='menu':        
         print ""
     elif i=='stop':
-        exit()
+        os._exit(0)
     else:
 	    print "Doesn't work"
 
