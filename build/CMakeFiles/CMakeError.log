@@ -1,0 +1,32 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/gcc-4.4 
+Build flags: 
+Id flags: 
+
+The output was:
+1
+/tmp/ccn7JIhj.o:(.eh_frame+0x12): undefined reference to `__gxx_personality_v0'
+collect2: ld returned 1 exit status
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+make[1]: Entering directory `/home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[2]: Entering directory `/home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o
+/usr/bin/gcc-4.4     -o CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o -c /home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec.dir/link.txt --verbose=1
+/usr/bin/gcc-4.4          CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec -rdynamic 
+CMakeFiles/cmTryCompileExec.dir/testCXXCompiler.cxx.o:(.eh_frame+0x12): undefined reference to `__gxx_personality_v0'
+collect2: ld returned 1 exit status
+make[2]: Leaving directory `/home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp'
+make[2]: *** [cmTryCompileExec] Error 1
+make[1]: *** [cmTryCompileExec/fast] Error 2
+make[1]: Leaving directory `/home/neosh/fuerte_workspace/sandbox/clopema_model_by_vision/build/CMakeFiles/CMakeTmp'
+
+
