@@ -9,4 +9,14 @@ addpath(genpath('./'));
 local_options;
 
 %% Only sign
-disp('Init startup - [ OK ]');
+if ~isempty(topics) && ~isempty(path_to_bag_files)
+    try
+        homedir=cd(path_to_bag_files);
+        cd(homedir);
+        disp('Init startup is fine. Everyone is happy.');
+    catch
+        disp('ERROR. Dictionary path_to_bag_files does not exist. Change local_options.m');
+    end    
+else
+    disp('ERROR. Probably something wrong with names in local_options.m');
+end
