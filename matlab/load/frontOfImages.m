@@ -26,7 +26,7 @@ function [ frontConnect , info , frontDist, frontRGB ] = frontOfImages( msgs, rg
         if( abs(queue{i, 1}(2,2))<offset  )
                 index=index+1;
                 [ pcloud, distance ] = getCloud( msgs{ queue{1, 1}(1,3),1 }{ 1,queue{i, 1}(1,1) }.data, true);
-                im=queueToImage(msgs{queue{1, 1}(2,3),1}{1,queue{i, 1}(2,1)}.data)./255;
+                im=queueToImageRGB(msgs{queue{1, 1}(2,3),1}{1,queue{i, 1}(2,1)}.data)./255;
                 imf=motionDetection(im,rgb_back);
                 frontConnect(:,index) = {im, imf, distance};
                 info(:,index)= queue(i,:);

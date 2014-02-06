@@ -1,3 +1,4 @@
+%% return time of stamp
 function [ time ] = getTimeOfImage( msgs, n_topic, n_image )
 
 % get time of image

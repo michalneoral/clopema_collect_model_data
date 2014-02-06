@@ -16,5 +16,5 @@ clear nfiles;
     msgs = loadBagFile( path_to_bag_files, topics, bagfile);
     
     %% Prepare struct
-    [front, queue] = frontOfImages(msgs,rgb_back);
+    %[front, queue] = frontOfImages(msgs,rgb_back);
 end

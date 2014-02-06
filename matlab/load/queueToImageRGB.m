@@ -1,4 +1,5 @@
-function [image] = queueToImage (queue,res_X,res_Y)
+
+function [image] = queueToImageRGB (queue,res_X,res_Y)
     if nargin < 2
         res_X=640;
         res_Y=480;
