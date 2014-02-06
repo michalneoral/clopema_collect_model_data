@@ -1,0 +1,23 @@
+# The basic
+build
+bin
+lib
+msg_gen
+srv_gen
+cmake_install.cmake
+
+# Massages and services Python files
+src/<your_package>
+
+# Compiled Python files
+*.pyc
+
+# Eclipse configuration files ()
+.cproject
+.project
+.pydevproject
+
+# Dynamic reconfigure
+*.cfgc
+src/*/cfg
+cfg/cpp
